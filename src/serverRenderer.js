@@ -1,18 +1,18 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
-import { StaticRouter } from 'react-router'
+import {StaticRouter} from 'react-router'
 import App from 'containers/App';
 
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import configureStore from 'redux/configureStore';
 import transit from 'transit-immutable-js';
 
 const renderApp = (context, store, location) => ReactDOMServer.renderToString(
-    <Provider store={store}>
-      <StaticRouter location={location} context={context}>
-        <App/>
-      </StaticRouter>
-    </Provider>
+  <Provider store={store}>
+    <StaticRouter location={location} context={context}>
+      <App/>
+    </StaticRouter>
+  </Provider>
 );
 
 const renderPage = (html, preloadedState) => {
@@ -46,7 +46,7 @@ const renderPage = (html, preloadedState) => {
 const renderer = (req, res, next) => {
 
   // skips static directory
-  if(req.path === '/favicon.ico' || req.path.split('/')[1] === 'static') return next();
+  if (req.path === '/favicon.ico' || req.path.split('/')[1] === 'static') return next();
 
   // This context object contains the results of the render
   const context = {};

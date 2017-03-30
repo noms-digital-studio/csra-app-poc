@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 
-const Header = ({ location }) => {
+const Header = ({location}) => {
   return (
     <div>
       <header role="banner" id="global-header" className="c-global-header with-proposition">
@@ -8,9 +8,9 @@ const Header = ({ location }) => {
           <div className="header-global">
             <div className="header-logo">
               <a href="/" title="Go to the HMPPS homepage" id="logo" className="content">
-                <img src="/pubilc/images/gov.uk_logotype_crown_invert_trans.png" width="36" height="32" alt="GOV.UK" />
+                <img src="/pubilc/images/gov.uk_logotype_crown_invert_trans.png" width="36" height="32" alt="GOV.UK"/>
                 <span>&nbsp;HMP {location}</span>
-            </a>
+              </a>
             </div>
           </div>
 

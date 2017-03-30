@@ -10,10 +10,10 @@ function asyncRoute(getComponent) {
     };
 
     componentWillMount() {
-      if ( this.state.Component === null ) {
+      if (this.state.Component === null) {
         getComponent().then(m => m.default).then(Component => {
-         AsyncComponent.Component = Component;
-          if ( this.mounted ) {
+          AsyncComponent.Component = Component;
+          if (this.mounted) {
             this.setState({Component});
           }
         })
@@ -31,7 +31,7 @@ function asyncRoute(getComponent) {
     render() {
       const {Component} = this.state;
 
-      if ( Component !== null ) {
+      if (Component !== null) {
         return <Component {...this.props} />
       }
       return null; // or <div /> with a loading spinner, etc..

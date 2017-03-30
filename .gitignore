@@ -1,6 +1,6 @@
-yarn.lock
 node_modules
 build
 .vscode
 .DS_Store
 npm-debug.log
+.idea/

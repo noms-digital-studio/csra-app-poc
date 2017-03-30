@@ -3,7 +3,7 @@ const createPromiseAction = ({type, promiseCreator}) => (payload) => ({
     payload: {
         promise: promiseCreator(payload)
     }
-})
+});
 
 
 export default createPromiseAction;

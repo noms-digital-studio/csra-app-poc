@@ -41,7 +41,7 @@ const renderPage = (html, preloadedState) => {
 
     </html>
   `
-}
+};
 
 const renderer = (req, res, next) => {
 
@@ -49,7 +49,7 @@ const renderer = (req, res, next) => {
   if(req.path === '/favicon.ico' || req.path.split('/')[1] === 'static') return next();
 
   // This context object contains the results of the render
-  const context = {}
+  const context = {};
 
   const store = configureStore();
   const location = req.url;
@@ -60,9 +60,9 @@ const renderer = (req, res, next) => {
   if (context.url) {
     res.writeHead(302, {
       Location: context.url
-    })
+    });
     res.end()
-  } else {    
+  } else {
     Promise.all(store.getState().promise).then(
       () => {
         // serialize the store, except the promise reducer (transit cannot handle it)
@@ -80,6 +80,6 @@ const renderer = (req, res, next) => {
     )
 
   }
-}
+};
 
 module.exports = renderer;
